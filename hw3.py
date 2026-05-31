@@ -20,7 +20,7 @@ def get_numbers_ticket(min: int, max: int, quantity: int):
     if type(min) != int or type(max) != int or type(quantity) != int:
         return "Input data must be integer."
 
-    if min < 1 or max > 1000:
+    if min < 1 or max > 1000 or min >= max or (max - min) < quantity:
         return []
 
     my_list = []
@@ -30,6 +30,7 @@ def get_numbers_ticket(min: int, max: int, quantity: int):
     result = random.sample(my_list, quantity)
     result.sort()
     return result
+
 
 # Third Task ----------------------------------------------------------
 def normalize_phone(phone_number: str):
